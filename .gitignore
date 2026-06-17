@@ -1,6 +1,8 @@
 # dependencies
 node_modules/
 
+php-backend/
+
 # env files
 .env
 .env.local
