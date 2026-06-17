@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# env files
+.env
+.env.local
+
+# logs
+logs/
+*.log
+
+# build outputs
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# Prisma
+prisma/dev.db
+prisma/*.db
+
+# OS files
+.DS_Store
+
+# Vercel
+.vercel/

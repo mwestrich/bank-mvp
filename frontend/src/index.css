@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface text-slate-100 font-sans antialiased;
+    background-image: radial-gradient(ellipse at top left, #1e1b4b 0%, #0f172a 60%);
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-600;
+  }
+  ::selection {
+    @apply bg-navy-600 text-white;
+  }
+}
+
+@layer components {
+  /* ── Inputs ── */
+  .input {
+    @apply w-full bg-surface-card border border-surface-border rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500
+           focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-500/20
+           transition-all duration-200;
+  }
+  .input:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  .input-label {
+    @apply block text-sm font-medium text-slate-400 mb-1.5;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-navy-600 hover:bg-navy-500 text-white focus:ring-navy-500 shadow-glow;
+  }
+  .btn-secondary {
+    @apply btn bg-surface-card hover:bg-surface-hover text-slate-300 border border-surface-border focus:ring-navy-500;
+  }
+  .btn-success {
+    @apply btn bg-emerald-600 hover:bg-emerald-500 text-white focus:ring-emerald-500;
+  }
+  .btn-danger {
+    @apply btn bg-rose-600 hover:bg-rose-500 text-white focus:ring-rose-500;
+  }
+  .btn-lg {
+    @apply px-6 py-3.5 text-base rounded-2xl;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-surface-card border border-surface-border rounded-2xl shadow-card;
+  }
+  .card-p {
+    @apply card p-6;
+  }
+
+  /* ── Badges ── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold;
+  }
+  .badge-deposit    { @apply badge bg-emerald-500/15 text-emerald-400; }
+  .badge-withdrawal { @apply badge bg-rose-500/15    text-rose-400;    }
+  .badge-transfer   { @apply badge bg-navy-500/20    text-navy-300;    }
+
+  /* ── Skeleton loader ── */
+  .skeleton {
+    @apply rounded-xl bg-surface-hover;
+    background-image: linear-gradient(90deg, #263148 25%, #2d3a52 50%, #263148 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* ── Form group ── */
+  .form-group {
+    @apply flex flex-col gap-1.5;
+  }
+}
