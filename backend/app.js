@@ -13,13 +13,8 @@ const app = express();
 
 app.use(cors({ 
   origin: function (origin, callback) {
-    // Allow local development ports and production URL
-    const allowedOrigins = [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:8080', 'http://127.0.0.1:5173'].filter(Boolean);
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+    // Allow all origins dynamically to prevent Vercel preview/production domain mismatches
+    callback(null, true);
   }, 
   credentials: true 
 }));
