@@ -1,5 +1,4 @@
-const serverless = require('serverless-http');
 const app = require('../backend/app');
 
-// Wrap the Express app for Serverless Deployment
-module.exports = serverless(app);
+// Vercel natively supports Express apps. No need for serverless-http.
+module.exports = app;
