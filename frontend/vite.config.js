@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: { port: 5173 },
   define: {
-    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || 'http://localhost:5173/api')
+    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || '/api')
   },
   build: {
     outDir: "dist"
