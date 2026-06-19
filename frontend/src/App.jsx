@@ -5,7 +5,6 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ProtectedRoute } from './utils/protectRoute.jsx';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
-import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Transfer from './pages/Transfer';
 import History from './pages/History';
@@ -20,7 +19,6 @@ function App() {
           <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <Routes>
               <Route path="/login"    element={<Login />} />
-              <Route path="/register" element={<Register />} />
               <Route path="/"         element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/transfer" element={<ProtectedRoute><Transfer /></ProtectedRoute>} />
               <Route path="/history"  element={<ProtectedRoute><History /></ProtectedRoute>} />

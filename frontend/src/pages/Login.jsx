@@ -135,13 +135,6 @@ export default function Login() {
               ) : 'Sign In'}
             </button>
           </form>
-
-          <p className="text-center text-slate-500 text-sm mt-8">
-            Don't have an account?{' '}
-            <Link to="/register" className="text-navy-400 hover:text-navy-300 font-medium transition-colors">
-              Create one free
-            </Link>
-          </p>
         </div>
       </div>
     </div>
